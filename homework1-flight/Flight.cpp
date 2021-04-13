@@ -64,42 +64,7 @@ void Flights::setType(const char* _type) {
 void Flights::setFlights(int _fl) {
 	flights = _fl;
 }
-/*
-istream& operator>>(istream& is, Flights& st)
-{
-	/*do {
-		is >> st.id;
-	} while (st.id < 0 || st.id>pow(2, 50));
-	do {
-		is >> st.plane;
-	} while (st.plane.length() < 0 || st.plane.length() > pow(2, 8));
-	do {
-		is >> st.type;
-	} while (st.type.length() < 0 || st.type.length() > pow(2, 8));
 
-	do {
-		is >> st.flights;
-	} while (st.flights < 2 || st.flights>6);
-	return is; 
-	static char buff[1024];
-	is >> setw(1024) >> buff;
-	delete[] st.plane; //cleans the old data
-	st.plane = new char[strlen(buff) + 1];
-	strcpy_s(st.plane, strlen(st.plane), buff);
-
-	delete[] st.type; //cleans the old data
-	st.type = new char[strlen(buff) + 1];
-	strcpy_s(st.type, strlen(st.type), buff);
-	return is;
-
-}
-
-ostream& operator<<(ostream& os, Flights& st)
-{
-	os << st.id << " " << st.plane << " " << st.type << " " << st.flights << "\n";
-	return os;
-}
-*/
 void Flights::save(ofstream& db) const {
 	db << id << ' ' << plane << ' ' << type << ' ' << flights << endl;
 	cout << "Record saved" << endl;
