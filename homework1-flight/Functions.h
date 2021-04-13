@@ -1,56 +1,7 @@
 #pragma once
 #include <fstream>
 #include "Flight.h"
-/*
-void create() {
-	fstream file;
-	file.open("Planes.txt", ios::app);
-	if (!file) { cerr << "File couldn't be opened!\n"; }
-	Flights st;
-	cin >> st;
-	file << st;
-	cout << "Record saved!\n";
-	file.close();
 
-}
-
-void sequentialSearch() {
-	fstream file;
-	file.open("Planes.txt", ios::in);
-	if (!file) { cerr << "File couldn't be opened!\n"; }
-	Flights st;
-	unsigned long long id;
-	do { cin >> id; } while (id<0 || id>pow(2, 50));
-	bool found = false;
-	file.seekg(0, ios::beg);
-	while (file >> st) {
-		if (st.getid() == id)
-		{
-			cout << st; found = true; break;
-		}
-
-	}
-	if (!found) { cout << "Record not found!\n"; }
-	file.close();
-
-}
-void operationParser() {
-	string input;
-	cin >> input;
-
-	while (input != "exit") {
-
-		if (input == "create") {
-			create();
-		}
-		else if (input == "sequentialSearch") {
-			sequentialSearch();
-		}
-		else { cout << "Invalid operation!\n"; }
-		cin >> input;
-	}
-}
-*/
 void create(ofstream& dbO, ifstream& dbI, const Flights& stC) {
 	if (stC.checkFlight(dbI)) {
 		stC.save(dbO);
