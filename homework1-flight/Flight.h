@@ -23,6 +23,5 @@ public:
 	void setFlights(int);
 	void save(ofstream&)const;
 	bool checkFlight(ifstream&)const;
-	//friend istream& operator>>(istream& is, Flights& st);
-	//friend ostream& operator<<(ostream& os, Flights& st);
+	
 };
